@@ -17,6 +17,8 @@ class MainWindow(QMainWindow, Ui_Program):
         for i in range(5):
             wid = hahhelper.CW()
             wid2 = hahhelper.VW()
+            wid2.name.setText('test')
+            wid2.qllabel.setText('stat')
             img = QImage('resources/Laddies_Cap.png')
             icon = QPixmap.fromImage(img)
             wid.icnlabel.setPixmap(icon)
