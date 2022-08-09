@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import hahhelper.resource
 
 
 class Ui_Program(object):
@@ -276,7 +277,7 @@ class Ui_Program(object):
         self.wikiBtn.setText(_translate("Program", "Wiki"))
         self.qualityLabel.setText(_translate("Program", "_____"))
         self.searchBtn.setText(_translate("Program", "search"))
-import resources.resource
+
 
 
 if __name__ == "__main__":

@@ -89,7 +89,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.name.setText(_translate("MainWindow", "Sample Text"))
         self.icnlabel.setText(_translate("MainWindow", "icon"))
-import resource_rc
+import hahhelper
 
 
 if __name__ == "__main__":

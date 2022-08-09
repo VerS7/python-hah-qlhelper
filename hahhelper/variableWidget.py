@@ -1,5 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-import resources.resource
+import resource
 
 
 class VW(QtWidgets.QWidget):
