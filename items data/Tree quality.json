@@ -2,26 +2,13 @@
 	"name":"Tree Quality",
 	"wiki-link":"https://ringofbrodgar.com/wiki/Tree",
 	"formula":"(Soil*2+Water*2+Gardener-pot*3+Herb-Table*3+Seed*15)/25",
-	"variables":{
-		"Soil": {
-			"is-saved": true,
-			"quality": 100
-				},
-		"Gardener-pot": {
-			"is-saved": false,
-			"quality": 0
-				},
-		"Seed": {
-			"is-saved": true,
-			"quality": 256
-				},
-		"Water": {
-			"is-saved": true,
-			"quality": 35
-				},
-		"Herb-Table": {
-			"is-saved": true,
-			"quality": 125
-				}
+	"variables": {
+		"Soil": 0,
+		"Gardener-pot": 0,
+		"Seed": 0,
+		"Water": 0,
+		"Herb-Table": 0
+	},
+	"stats": {
 	}
 }

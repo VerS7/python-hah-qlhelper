@@ -1,0 +1,12 @@
+{
+	"name":"Treeplanters Pot",
+	"wiki-link":"https://ringofbrodgar.com/wiki/Treeplanter%27s_Pot",
+	"formula":"(Unburnt-pot*2+Fuel+Kiln)/4",
+	"variables": {
+		"Unburnt-pot": 0,
+		"Fuel": 0,
+		"Kiln": 0
+	},
+	"stats": {
+	}
+}

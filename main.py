@@ -4,6 +4,7 @@ from PyQt5.Qt import *
 from ffffqlhelperUI import Ui_Program
 # from tkinter import filedialog
 import hahhelper
+import glob
 
 
 class MainWindow(QMainWindow, Ui_Program):
@@ -14,23 +15,58 @@ class MainWindow(QMainWindow, Ui_Program):
         self.ui.setupUi(self)
         self.ui.items.setWidgetResizable(True)
         """Интерфейс"""
-        for i in range(5):
-            wid = hahhelper.CW()
-            wid2 = hahhelper.VW()
-            wid2.name.setText('test')
-            wid2.qllabel.setText('stat')
-            img = QImage('resources/Laddies_Cap.png')
-            icon = QPixmap.fromImage(img)
-            wid.icnlabel.setPixmap(icon)
-            wid.name.setText(f"SampleText:index{i}")
-            wid.clickable_widget.mousePressEvent = lambda event: print('worked!')
-            self.ui.verticalLayout.addWidget(wid.clickable_widget)
-            self.ui.verticalLayout_2.addWidget(wid2.variables_widget)
-            self.ui.items.show()
-        """Объект класса Tkinter для работы с filedialog"""
-        tkobject = tk.Tk()
-        tkobject.withdraw()
-        """Кнопки"""
+        #r'D:\Python Projects\python-hah-qlhelper\items data\Unfired TreePot.json'
+        for elem in glob.glob(r'D:\Python Projects\python-hah-qlhelper\items data\*.json'):
+            print(elem)
+            parsed = hahhelper.ItemsParser(elem)
+            self.add_clickable_widget(parsed)
+            #for j in parsed.variables:
+                #self.add_variable_widget((j, parsed.variables.get(j)), 'quality')
+
+        #for i in range(5):
+            #self.add_clickable_widget(parsed)
+            #wid = hahhelper.CW()
+            # wid2.name.setText('test')
+            # wid2.qllabel.setText('stat')
+            # img = QImage('resources/Laddies_Cap.png')
+            # icon = QPixmap.fromImage(img)
+            # wid.icnlabel.setPixmap(icon)
+            # wid.name.setText(f"SampleText:index{i}")
+            # wid.clickable_widget.mousePressEvent = lambda event: print('worked!')
+            # self.ui.verticalLayout.addWidget(wid.clickable_widget)
+            # self.ui.verticalLayout_2.addWidget(wid2.variables_widget)
+            # self.ui.items.show()
+
+    def add_clickable_widget(self, parsed):
+        """Adds item widget to scrollarea"""
+        widget = hahhelper.CW()
+        widget.name.setText(parsed.name)  # Item name
+        widget.clickable_widget.mousePressEvent = lambda event: print('worked!')
+        widget.icnlabel.setPixmap(self.img_from_name(parsed.name))  # Item icon (Must be in items data .png file named like json)
+        self.ui.verticalLayout.addWidget(widget.clickable_widget)  # Adds widget to scrollarea
+        self.ui.items.show()  # Refreshes scrollarea
+
+    def img_from_name(self, name):
+        """Makes QPixmap object from item filename"""
+        name = name.strip('.json')
+        return QPixmap.fromImage(QImage(f'items data/{name}.png'))
+
+    def add_variable_widget(self, variable, _type):
+        """Adds variable widget to scrollarea"""
+        widget = hahhelper.VW()
+        widget.qllabel.setText(_type)
+        widget.name.setText(variable[0])
+        widget.enter.setText(str(variable[1]))
+        self.ui.verticalLayout_2.addWidget(widget.variables_widget)  # Adds widget to scrollarea
+        self.ui.items.show()  # Refreshes scrollarea
+
+
+
+        # """Объект класса Tkinter для работы с filedialog"""
+        # tkobject = tk.Tk()
+        # tkobject.withdraw()
+        # """Кнопки"""
+
     #     self.ui.browse.clicked.connect(lambda: self.browse())
     #     self.ui.save.clicked.connect(lambda: self.save_to())
     #     self.ui.convert.clicked.connect(lambda: self.make_gif())
@@ -71,4 +107,3 @@ if __name__ == '__main__':
     window = MainWindow()
     window.show()
     app.exec_()
-

@@ -1,0 +1,14 @@
+{
+	"name":"Unfired TreePot",
+	"wiki-link":"https://ringofbrodgar.com/wiki/Unfired_Treeplanter%27s_Pot",
+	"formula":"(Clay*3+Potters-Wheel)/4",
+	"variables": {
+		"Clay": 40,
+		"Potters-Wheel": 150
+	},
+	"stats": {
+		"Dexterity": 10,
+		"Masonry": 1,
+		"Farming": 1
+	}
+}
