@@ -35,25 +35,3 @@ class ItemsParser:
         """Count softcap from stats"""
         return pow(reduce(mul, self.stats.values()), 1/(len(self.stats)))
 
-    # Not working rn
-    def write_variables(self):
-        """Write variables dict to json file"""
-        self.fl['variables'] = self.variables
-        with open(self.filename, 'w') as json_raw:
-            json.dump(json_raw, self.fl)
-
-    # Not working rn
-    def write_stats(self):
-        """Write stats dict to json file"""
-        self.fl['stats'] = self.stats
-        with open(self.filename, 'w') as json_raw:
-            json.dump(json_raw, self.fl)
-
-
-# fl = ItemsParser(r'D:\Python Projects\python-hah-qlhelper\items data\Unfired TreePot.json')
-# print(fl.variables)
-# print(fl.formula)
-# print(fl.stats)
-# print(fl.name)
-# print(fl.wiki)
-# print(fl.count_result())
