@@ -14,6 +14,8 @@ class MainWindow(QMainWindow, Ui_Program):
         super(MainWindow, self).__init__()
         self.ui = Ui_Program()
         self.ui.setupUi(self)
+        self.setWindowTitle("Haven and Hearth quality helper")
+        self.setWindowIcon(QIcon('icon.ico'))
         self.ui.items.setWidgetResizable(True)
         self.add_clickables_from_list([elem for elem in glob.glob(r'items data\*.json')])
         self.ui.searchBtn.clicked.connect(lambda: self.sort_clickables_by_search())
