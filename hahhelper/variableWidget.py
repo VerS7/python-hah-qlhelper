@@ -1,10 +1,11 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-import resources.resource
+import resource
 
 
 class VW(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
+        self._type = None
         self.variables_widget = QtWidgets.QWidget()
         self.variables_widget.setSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         self.variables_widget.setGeometry(QtCore.QRect(210, 200, 301, 51))

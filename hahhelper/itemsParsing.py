@@ -21,24 +21,31 @@ class ItemsParser:
         formula = self.formula
         for elem in self.variables:
             formula = formula.replace(str(elem), str(self.variables.get(elem)))
-        if self.softcap() >= eval(formula) or self.softcap() == 0:
+        if len(self.stats) > 0:
+            """if stats exist"""
+            if self.softcap() >= eval(formula) or self.softcap() == 0:
+                return round(eval(formula))
+            elif self.softcap() <= eval(formula):
+                return round((eval(formula) + self.softcap())/2)
+        elif len(self.stats) == 0:
+            """if stats isnt exist"""
             return round(eval(formula))
-        else:
-            return round((eval(formula) + self.softcap())/2)
 
     def softcap(self):
         """Count softcap from stats"""
         return pow(reduce(mul, self.stats.values()), 1/(len(self.stats)))
 
-    def write_variables(self, _variables):
+    # Not working rn
+    def write_variables(self):
         """Write variables dict to json file"""
-        self.fl['variables'] = _variables
+        self.fl['variables'] = self.variables
         with open(self.filename, 'w') as json_raw:
             json.dump(json_raw, self.fl)
 
-    def write_stats(self, _stats):
+    # Not working rn
+    def write_stats(self):
         """Write stats dict to json file"""
-        self.fl['stats'] = _stats
+        self.fl['stats'] = self.stats
         with open(self.filename, 'w') as json_raw:
             json.dump(json_raw, self.fl)
 
@@ -46,6 +53,7 @@ class ItemsParser:
 # fl = ItemsParser(r'D:\Python Projects\python-hah-qlhelper\items data\Unfired TreePot.json')
 # print(fl.variables)
 # print(fl.formula)
+# print(fl.stats)
 # print(fl.name)
 # print(fl.wiki)
 # print(fl.count_result())

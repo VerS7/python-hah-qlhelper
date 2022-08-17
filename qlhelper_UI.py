@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ffffqlhelperUI.ui'
+# Form implementation generated from reading ui file 'qlhelper_UI.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import resources.resource
+import resource
 
 
 class Ui_Program(object):
@@ -109,6 +109,28 @@ class Ui_Program(object):
 "}\n"
 "")
         self.wikiBtn.setObjectName("wikiBtn")
+        self.namelbl = QtWidgets.QLabel(self.wikiWidget)
+        self.namelbl.setGeometry(QtCore.QRect(10, 30, 201, 31))
+        font = QtGui.QFont()
+        font.setFamily("Vin Slab Pro")
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setWeight(75)
+        self.namelbl.setFont(font)
+        self.namelbl.setStyleSheet("QLabel {\n"
+"    border: None;\n"
+"}")
+        self.namelbl.setText("")
+        self.namelbl.setAlignment(QtCore.Qt.AlignCenter)
+        self.namelbl.setObjectName("namelbl")
+        self.imglbl = QtWidgets.QLabel(self.wikiWidget)
+        self.imglbl.setGeometry(QtCore.QRect(50, 70, 121, 121))
+        self.imglbl.setStyleSheet("QLabel {\n"
+"    border: None;\n"
+"}\n"
+"")
+        self.imglbl.setText("")
+        self.imglbl.setObjectName("imglbl")
         self.addBtn = QtWidgets.QPushButton(self.centralwidget)
         self.addBtn.setGeometry(QtCore.QRect(10, 610, 148, 51))
         font = QtGui.QFont()
@@ -277,7 +299,6 @@ class Ui_Program(object):
         self.wikiBtn.setText(_translate("Program", "Wiki"))
         self.qualityLabel.setText(_translate("Program", "_____"))
         self.searchBtn.setText(_translate("Program", "search"))
-
 
 
 if __name__ == "__main__":

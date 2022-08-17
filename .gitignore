@@ -1,2 +1,4 @@
 .gitignore
 /venv/
+clickwidget.ui
+Errors.log

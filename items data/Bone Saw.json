@@ -1,0 +1,13 @@
+{
+	"name":"Bone Saw",
+	"wiki-link":"https://ringofbrodgar.com/wiki/Bone_Saw",
+	"formula":"(Bone+Bough)/2",
+	"variables": {
+		"Bough": 10,
+		"Bone": 10
+	},
+	"stats": {
+		"Survival": 1,
+		"Intelligence": 10
+	}
+}

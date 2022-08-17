@@ -1,10 +1,11 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-import resources.resource
+import resource
 
 
 class CW(QtWidgets.QWidget):
-    def __init__(self):
+    def __init__(self, _parsed):
         super().__init__()
+        self.data = _parsed
         self.clickable_widget = QtWidgets.QWidget()
         self.clickable_widget.setMinimumSize(351, 80)
         self.clickable_widget.setSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
