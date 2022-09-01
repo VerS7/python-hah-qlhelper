@@ -1,0 +1,15 @@
+{
+	"name":"Bow",
+	"wiki-link":"",
+	"formula":"(Bough+String+Leather)/3",
+	"variables": {
+		"Bough": 0,
+		"String": 0,
+		"Leather": 0
+	},
+	"stats": {
+		"Dexterity": 10,
+		"Carpentery": 1,
+		"Marksmanship": 1
+	}
+}

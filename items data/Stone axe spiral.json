@@ -1,0 +1,14 @@
+{
+	"name":"Stone axe spiral",
+	"wiki-link":"",
+	"formula":"(sqrt(Axe*Block-of-wood)+Stone)/2",
+	"variables": {
+		"Axe": 10,
+		"Block-of-wood": 10,
+		"Stone": 10
+	},
+	"stats": {
+		"Survival": 10,
+		"Intelligence": 10
+	}
+}

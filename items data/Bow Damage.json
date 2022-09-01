@@ -1,0 +1,14 @@
+{
+	"name":"Bow Damage",
+	"wiki-link":"",
+	"formula":"BowBaseDamage*(sqrt(sqrt(Marksmanship*qBow)/10))+ArrowBaseDamage*(sqrt(qArrow/10))",
+	"variables": {
+		"qBow": 10,
+		"BowBaseDamage": 15,
+		"ArrowBaseDamage": 15,
+		"qArrow": 10,
+		"Marksmanship": 1
+	},
+	"stats": {
+	}
+}
