@@ -112,6 +112,13 @@ class MainWindow(QMainWindow, Ui_Program):
         except Exception:
             self.write_log()
 
+    def wiki_opener(self, wiki):
+        """opens URL in browser"""
+        try:
+            webbrowser.open(wiki)
+        except Exception:
+            self.write_log()
+
     def widget_event(self, widget):
         """Adds widget, wiki widget and sets last clickable widget data"""
         try:
@@ -119,7 +126,8 @@ class MainWindow(QMainWindow, Ui_Program):
             self.lastClickable = widget.data
             self.add_widgets_by_parsed(widget.data)
             self.set_name_and_img(widget.data.name)
-            self.ui.wikiBtn.clicked.connect(lambda: webbrowser.open(widget.data.wiki))
+            self.ui.wikiBtn.disconnect()
+            self.ui.wikiBtn.clicked.connect(lambda: self.wiki_opener(widget.data.wiki))
         except Exception:
             self.write_log()
 

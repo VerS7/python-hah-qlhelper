@@ -35,3 +35,6 @@ class ItemsParser:
         """Count softcap from stats"""
         return pow(reduce(mul, self.stats.values()), 1/(len(self.stats)))
 
+
+x = ItemsParser(r'D:\Python Projects\python-hah-qlhelper\items data\Bow Damage.json')
+print(x.count_result())
